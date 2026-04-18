@@ -1,0 +1,38 @@
+[project]
+name = "eventflow-backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "celery[redis]>=5.6.3",
+    "channels>=4.3.2",
+    "channels-redis>=4.3.0",
+    "daphne>=4.2.1",
+    "django>=6.0.4",
+    "django-celery-beat>=2.9.0",
+    "django-celery-results>=2.6.0",
+    "django-channels>=0.7.0",
+    "django-cors-headers>=4.9.0",
+    "django-environ>=0.13.0",
+    "django-tenants>=3.10.1",
+    "djangorestframework>=3.17.1",
+    "djangorestframework-simplejwt>=5.5.1",
+    "pillow>=12.2.0",
+    "psycopg2-binary>=2.9.11",
+    "python-dateutil",
+    "qrcode[pil]>=8.2",
+    "stripe>=15.0.1",
+]
+
+[dependency-groups]
+dev = [
+    "black>=26.3.1",
+    "django-debug-toolbar>=6.3.0",
+    "factory-boy>=3.3.3",
+    "isort>=8.0.1",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "pytest-django>=4.12.0",
+    "ruff>=0.15.11",
+]
