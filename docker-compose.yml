@@ -92,6 +92,15 @@ services:
     depends_on:
       - celery_worker
 
+  stripe_cli:
+    image: stripe/stripe-cli:latest
+    command: listen --forward-to web:8000/api/v1/webhooks/stripe/ --skip-verify
+    environment:
+      STRIPE_API_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_DEVICE_NAME: eventflow_docker
+    depends_on:
+      - web
+
 volumes:
   postgres_data:
   media_files:

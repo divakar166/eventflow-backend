@@ -42,7 +42,7 @@ class OrganizationUser(models.Model):
         MANAGER = 'manager', 'Event Manager'
         VIEWER  = 'viewer',  'Viewer'
 
-    user   = models.ForeignKey(
+    user = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
         related_name='organization_memberships'

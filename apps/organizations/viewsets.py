@@ -7,12 +7,6 @@ class TenantModelViewSet(viewsets.ModelViewSet):
     """
     Base ViewSet that automatically scopes all queries and writes
     to the current request's tenant. Never returns cross-tenant data.
-
-    Usage:
-        class EventViewSet(TenantModelViewSet):
-            serializer_class = EventSerializer
-            queryset = Event.objects.all()   # will be auto-scoped
-            tenant_field = 'organization'    # FK field name on your model
     """
 
     permission_classes = [IsTenantMember]
