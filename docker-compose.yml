@@ -98,8 +98,6 @@ services:
     environment:
       STRIPE_API_KEY: ${STRIPE_SECRET_KEY}
       STRIPE_DEVICE_NAME: eventflow_docker
-    depends_on:
-      - web
 
 volumes:
   postgres_data:
